@@ -23,18 +23,24 @@ var compareFields = function(field_1, field_2){
 	}
 }
 
+var validate = function(){
+	validateLength($("#textfield"), 4, 32);
+	validateLength($("#myarea"), 4, 140);
+	validateLength($("#passwordfield"), 6, 16);
+	validateLength($("#passwordconfirmfield"), 6, 16);
+}
+
 var validateLength = function(el, min, max){
 	if (el.val().length < min) {
-
-		el.addClass("errors")
-		$(el.id+"errors").text("Too Short")
+		el.addClass("errors");
+		$("#" + el[0].id+"errors").text("Too Short");
 	} else if (el.val().length > max){
-		//remove "errors"
+		el.addClass("errors");
+		$("#" +_el[0].id+"errors").text("Too Long");
 	}
 	else {
-		//set "errors"
-		//add error class to el
-		//set text of $(el.id + "errors")
+		el.removeClass("errors");
+		$("#" + el[0].id+"errors").text("");
 	}
 }
 
@@ -59,3 +65,7 @@ $("#passwordconfirmfield").keyup(function(){
 	limitChars.call(this, 16, $("#passwordconfirmctr"));
 	$("#matchpassword").text(compareFields($("#passwordfield"), $("#passwordconfirmfield")))
 });
+
+$("#submitbtn").click(function(){
+	validate();
+})
