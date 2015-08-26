@@ -3,12 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 	<body>
-		<input type="text" id="textfield"/><span id="textfieldctr"></span></br>
-		<textarea id="myarea"></textarea><span id="myareactr"></span></br>
-		<input type="password" id="passwordfield"/><span id="passwordctr"></span></br>
-		<input type="password" id="passwordconfirmfield"/><span id="passwordconfirmctr"></span></br>
+
+		<input type="text" id="textfield"/><span id="textfieldctr"></span><span id="textfielderrors" class ="error-messages"></span></br>
+
+		<textarea id="myarea"></textarea><span id="myareactr"><span id="myareaerrors" class ="error-messages"></span></span></br>
+
+		<input type="password" id="passwordfield"/><span id="passwordctr"></span><span id="passwordfielderrors" class ="error-messages"></span></br>
+
+		<input type="password" id="passwordconfirmfield"/><span id="passwordconfirmctr"></span><span id="passwordconfirmfielderrors" class ="error-messages"></span></br>
+
+		<span id="matchpassword" class="error-messages"></span><br>
+		<input type="submit" id="submitbtn">
 
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="scripts.js"></script>
