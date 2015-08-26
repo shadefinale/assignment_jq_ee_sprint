@@ -13,7 +13,7 @@ body {
   background: #ABCDEF;
   font-family: Nunito, arial, verdana;
 }
-#accordian {
+#menu {
   background: #487099;
   width: 250px;
   margin: 100px auto 0 auto;
@@ -24,7 +24,7 @@ body {
     0 0 200px 1px rgba(255, 255, 255, 0.5);
 }
 /*heading styles*/
-#accordian h3 {
+#menu h3 {
   font-size: 12px;
   line-height: 34px;
   padding: 0 10px;
@@ -32,20 +32,20 @@ body {
   background: #1A4C80; /*fallback for browsers not supporting gradients*/
 }
 /*heading hover effect*/
-#accordian h3:hover {
+#menu h3:hover {
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
 }
 /*iconfont styles*/
-#accordian h3 span {
+#menu h3 span {
   font-size: 16px;
   margin-right: 10px;
 }
 /*list items*/
-#accordian li {
+#menu li {
   list-style-type: none;
 }
 /*links*/
-#accordian ul ul li a {
+#menu ul ul li a {
   color: white;
   text-decoration: none;
   font-size: 11px;
@@ -56,15 +56,15 @@ body {
   transition: all 1.15s;
 }
 /*hover effect on links*/
-#accordian ul ul li a:hover {
+#menu ul ul li a:hover {
   background: #3CF;
   border-left: 5px solid #2BE;
 }
 /*Lets hide the non active LIs by default*/
-#accordian ul ul {
+#menu ul ul {
   display: none;
 }
-#accordian li.active ul {
+#menu li.active ul {
   display: block;
 }
 
