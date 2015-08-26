@@ -1,0 +1,22 @@
+.background{
+  z-index: -1;
+  position: absolute;
+  float: none;
+}
+
+.duck {
+  position: absolute;
+  border: dotted red 2px;
+  float: none;
+    width: 40px;
+    height: 36px;
+    top: 100px;
+    left: -50px;
+    background-image: url("http://www.mariomayhem.com/downloads/sprites/duck_hunt/duckhunt_various_sheet.png");
+            animation: play .5s steps(3) infinite;
+}
+
+@keyframes play {
+   from { background-position:    0px; }
+     to { background-position: -120px; }
+}
