@@ -15,7 +15,14 @@ function killDuck(target){
   console.log("clicked duck!");
   console.log(target);
   target.stop();
-  target.fadeOut(100);
+  target.removeClass("duck")
+  target.addClass("shot");
+  setTimeout(function(){
+    target.removeClass("shot")
+    target.removeClass("left")
+    target.addClass("falling")
+    target.animate({top: $(window).height() + 50}, 3000, "swing")
+  },750)
 }
 
 function generateDuck(){
@@ -25,13 +32,19 @@ function generateDuck(){
   newDuck = $(newDuck);
   newDuck.attr("draggable", "false");
 
-  newDuck.click(function(){
+  newDuck.mousedown(function(){
     killDuck(newDuck);
   });
 
   newDuck.css("top", Math.floor(Math.random() * 500));
   $("body").append(newDuck);
+  if (Math.floor(Math.random() + 0.5)) {
   newDuck.animate({left: $(window).last().width()+50}, Math.floor(Math.random() * 5500) + 2500  , "linear");
+    } else {
+  newDuck.addClass("left")
+  newDuck.css("left", $(window).width()+50)
+  newDuck.animate({left: -50}, Math.floor(Math.random() * 5500) + 2500  , "linear");
+  }
   setTimeout(function(){
     newDuck.remove();
   }, 8000);

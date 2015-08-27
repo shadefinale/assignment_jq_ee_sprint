@@ -26,10 +26,52 @@ html {
     top: 100px;
     left: -50px;
     background-image: url("http://www.mariomayhem.com/downloads/sprites/duck_hunt/duckhunt_various_sheet.png");
-            animation: play .5s steps(3) infinite;
+            animation: fly .5s steps(3) infinite;
 }
 
-@keyframes play {
+.left {
+  transform: scale(-1,1);
+}
+
+.shot {
+  position: absolute;
+  border: dotted red 2px;
+  float: none;
+    width: 40px;
+    height: 36px;
+    background-image: url("http://www.mariomayhem.com/downloads/sprites/duck_hunt/duckhunt_various_sheet.png");
+            animation: shot 1s steps(1) infinite;
+}
+
+.falling {
+  position: absolute;
+  border: dotted red 2px;
+  float: none;
+    width: 40px;
+    height: 30px;
+    background-image: url("http://www.mariomayhem.com/downloads/sprites/duck_hunt/duckhunt_various_sheet.png");
+            animation: falling .2s steps(1) infinite;
+}
+
+@keyframes fly {
    from { background-position:    0px; }
      to { background-position: -120px; }
 }
+
+@keyframes falling {
+   0% { background-position:    -40px 30px; }
+  50% { background-position: -40px 30px;
+        transform: scale(-1, 1); }
+ 100% { background-position:    -40px 30px; }
+
+}
+
+@keyframes shot {
+   from { background-position:    0px 36px; }
+     to { background-position: -40px 36px; }
+}
+
+
+
+
+
