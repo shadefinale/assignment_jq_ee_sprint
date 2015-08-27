@@ -32,6 +32,8 @@ function generateDuck(){
   newDuck = $(newDuck);
   newDuck.attr("draggable", "false");
 
+  newDuck.on('dragstart', function(event) { event.preventDefault(); });
+
   newDuck.mousedown(function(){
     killDuck(newDuck);
   });
@@ -49,6 +51,17 @@ function generateDuck(){
     newDuck.remove();
   }, 8000);
 }
+
+$("body").mousedown(function(){
+  $("body").hide();
+  setTimeout(function(){
+    $("body").show();
+    }, 30);
+  }
+)
+
+$("body").on('dragstart', function(event) { event.preventDefault(); });
+$(".background").on('dragstart', function(event) { event.preventDefault(); });
 
 generateDuck();
 setInterval(generateDuck, Math.floor(Math.random() * 3500) + 1500);
